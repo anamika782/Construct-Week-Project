@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Clone</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #000;
+            color: #fff;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+        }
+        #hero {
+            text-align: center;
+            padding: 50px;
+            background: #F4F4F4;
+        }
+        .article-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .article {
+            border: 1px solid #ddd;
+            padding: 10px;
+            flex: 1 1 calc(50% - 20px);
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .article {
+                flex: 1 1 100%;
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #000;
+            color: white;
+        }
+        #about, #contact {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Medium Clone</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="signin-btn">Sign In</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h1>Welcome to Medium Clone</h1>
+            <p>Your space to share ideas and connect with others.</p>
+            <button class="start-btn">Get Started</button>
+        </section>
+        <section id="articles">
+            <h2>Featured Articles</h2>
+            <div class="article-grid">
+                <div class="article">
+                    <h3>Article Title 1</h3>
+                    <p>Author: John Doe</p>
+                    <button class="save-article">Save for Later</button>
+                </div>
+                <div class="article">
+                    <h3>Article Title 2</h3>
+                    <p>Author: Jane Doe</p>
+                    <button class="save-article">Save for Later</button>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Medium Clone is a platform where you can share and discover amazing ideas.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@mediumclone.com</p>
+            <p>Phone: +123-456-7890</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Medium Clone</p>
+    </footer>
+    <script>
+       
+        const savedArticles = [];
+        document.querySelectorAll('.save-article').forEach(button => {
+            button.addEventListener('click', () => {
+                const articleTitle = button.parentElement.querySelector('h3').textContent;
+                savedArticles.push(articleTitle);
+                alert(`Saved: ${articleTitle}`);
+                console.log('Saved Articles:', savedArticles);
+            });
+        });
+        
+        document.querySelector('.signin-btn').addEventListener('click', () => {
+            const username = prompt('Enter username:');
+            const password = prompt('Enter password:');
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            })
+            .then(res => res.json())
+            .then(data => alert(data.message))
+            .catch(err => console.error(err));
+        });
+    </script>
+</body>
+</html>
