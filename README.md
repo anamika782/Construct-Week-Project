@@ -1,13 +1,15 @@
-                                                        Medium Clone
+
+ ## Medium Clone 
                                                       
 A simplified Medium-like platform to share and discover amazing ideas. This project demonstrates basic HTML, CSS, and JavaScript concepts, along with a user-friendly UI.
 
-Introduction    This project is a simple Medium style profile application built using HTML, CSS, and JavaScript. It implements localStorage to handle user signup, login.
+ ## Introduction   
+ This project is a simple Medium style profile application built using HTML, CSS, and JavaScript. It implements localStorage to handle user signup, login.
 
- Overview
+ ## Overview
 Medium Clone is a lightweight version of the popular blogging platform Medium. It allows users to browse articles, save articles for later, and simulate a basic sign-in process. The application is designed with responsiveness and simplicity in mind.
 
-  Features
+ ## Features
 - **Responsive Navigation Bar**: Includes links to Home, About, and Contact sections.
 - **Hero Section**: A welcoming header to introduce users to the platform.
 - **Featured Articles**: Display a grid of articles with "Save for Later" functionality.
@@ -25,7 +27,7 @@ cd medium-clone
 open index.html
 For the sign-in feature to work, ensure you have a backend server running at http://localhost:3000/login to handle POST requests.
 ---
-Usage
+   ## Usage
 1. Home Section:
 View a hero banner introducing the platform.
 2. Featured Articles:
@@ -39,7 +41,7 @@ A simulated backend call will authenticate the user.
 Learn more about the platform.
 Access contact details.
 ---
-Future Enhancements
+ ## Future Enhancements
 User Registration: Add a feature for user sign-up.
 Article Upload: Allow users to create and upload their own articles.
 Saved Articles Page: Display saved articles in a dedicated section.
